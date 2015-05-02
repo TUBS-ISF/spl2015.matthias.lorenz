@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<alt abstract="true" mandatory="true" name="MatthiasLorenzTask1">
+				<description>
+					 
+				</description>
+				<and abstract="true" mandatory="true" name="Terminsoftware">
+					<description>
+						generische Software zur Terminverwaltung
+					</description>
+					<and abstract="true" mandatory="true" name="lokale Datenhaltung">
+						<description>
+							sätmliche Datenhaltung die lokal vorgenommen wird
+							
+						</description>
+						<feature mandatory="true" name="eintragen">
+							<description>
+								minimal-feature. erstellen des Termins
+								
+							</description>
+						</feature>
+						<feature mandatory="true" name="auslesen">
+							<description>
+								auslesen des termins
+								
+							</description>
+						</feature>
+						<feature name="wiederholen">
+							<description>
+								möglichkeit termin nach einem bestimmten muster zu wiederholen
+								(wöchentlich, einmalig, jährlich)
+								
+							</description>
+						</feature>
+						<feature name="kopieren">
+							<description>
+								termin 1:1 kopieren für nachbearbeitungen
+							</description>
+						</feature>
+						<feature name="löschen">
+							<description>
+								termin entfernen
+								
+							</description>
+						</feature>
+						<or abstract="true" name="backup / restore">
+							<description>
+								einfache backup und restore möglichkeiten
+							</description>
+							<feature mandatory="true" name="lokales backup">
+								<description>
+									lokale kopie des files um diese manuell auf USB-Stick, oder entfernten PC zu sichern
+									
+								</description>
+							</feature>
+							<feature mandatory="true" name="cloud backup">
+								<description>
+									backup in der (Daten)cloud
+								</description>
+							</feature>
+						</or>
+						<or abstract="true" name="import / export">
+							<description>
+								import export eines Termins in verschiedene formate
+								
+							</description>
+							<feature mandatory="true" name="csv"/>
+							<feature mandatory="true" name="txt"/>
+							<feature mandatory="true" name="iCal"/>
+							<feature mandatory="true" name="Google"/>
+						</or>
+					</and>
+					<and abstract="true" name="entfernte Datenhaltung">
+						<description>
+							verteilte komponenten, die vor allem im multi-user bereich sinn macht oder wenn ein user verschiendene geräte nutzt
+						</description>
+						<feature name="entferntes abrufen von Terminen">
+							<description>
+								abrufen von terminen die zentral gespeichert sind
+								
+							</description>
+						</feature>
+						<feature name="entfernte Übermittlung von Terminen">
+							<description>
+								übermitteln der termine an eine zentrale speicherstelle
+							</description>
+						</feature>
+					</and>
+					<or abstract="true" mandatory="true" name="Interface">
+						<description>
+							interface für die interaktion mit dem programm
+							
+						</description>
+						<or mandatory="true" name="GUI">
+							<description>
+								verschiedene grafische interfaces
+								
+							</description>
+							<feature mandatory="true" name="Dekstop">
+								<description>
+									auf Desktop optimiert
+									
+								</description>
+							</feature>
+							<feature mandatory="true" name="Phone">
+								<description>
+									für Smartphone optimiert
+									
+								</description>
+							</feature>
+							<feature mandatory="true" name="Pad">
+								<description>
+									für Pads optimiert
+								</description>
+							</feature>
+						</or>
+						<feature mandatory="true" name="Terminal">
+							<description>
+								einfache Terminal-Interaktion
+								
+							</description>
+						</feature>
+						<feature mandatory="true" name="Log">
+							<description>
+								Logging
+							</description>
+						</feature>
+					</or>
+					<and abstract="true" name="Multi-User">
+						<description>
+							Features zur Kooperation mehrer User
+						</description>
+						<feature name="Termin teilen">
+							<description>
+								Termin an andere Nutzer übermitteln
+							</description>
+						</feature>
+						<and name="Termingruppen">
+							<description>
+								Möglichkeit Termine Gruppen zuzuordnen
+								
+							</description>
+							<feature name="Termin zuweisen">
+								<description>
+									Zuweisung an andere Nutzer der Gruppe
+								</description>
+							</feature>
+							<feature name="Sichtbarkeit in Gruppe">
+								<description>
+									Sichtbarkeit der Termine in der Gruppe
+								</description>
+							</feature>
+						</and>
+					</and>
+					<and abstract="true" name="Sicherheit">
+						<description>
+							Sicherheitsrelevante Features
+						</description>
+						<feature name="Authentifizierung">
+							<description>
+								An und Abmelden von Benutzern
+								
+							</description>
+						</feature>
+						<feature name="Verschlüsselung">
+							<description>
+								Verschlüsseln der gespeicherten Daten
+							</description>
+						</feature>
+					</and>
+					<and abstract="true" name="Notifications">
+						<description>
+							Mitteilungen für einen anstehenden Termin
+							
+						</description>
+						<feature name="im Interface">
+							<description>
+								Mitteilung wenn Software läuft
+							</description>
+						</feature>
+						<feature name="sms">
+							<description>
+								Kurznachricht an ein Telefon
+							</description>
+						</feature>
+						<feature name="mail">
+							<description>
+								email nachricht
+							</description>
+						</feature>
+					</and>
+				</and>
+			</alt>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
