@@ -1,0 +1,26 @@
+GUI nicht implementiert, ohne gui als Parameter wird automatisch das Terminal Interface genutzt.
+
+
+1. Keine Parameter:
+	- Versuch neues Appointment anzulegen:
+		"Trying to write, but no StorageHandler present!"
+		- erwartet, da laut Konfiguration mindestens eine Speicherart (Disk oder Cloud) ausgewählt werden muss
+	- Versuch Appointments anzulegen:
+		"Trying to read, but no StorageHandler present!
+			No Appointment found."
+		- erwartet, da laut Konfiguration mindestens eine Speicherart (Disk oder Cloud) ausgewählt werden muss
+	
+		
+2. nur disk als Parameter:
+	- Appointment kann nun angelegt werden
+	- Appointments können nun angezeigt werden
+	- Nicht inkludierte Optionen werden im Menü nicht angeboten.
+	
+	
+3. disk und delete als Paramter:
+	- Delete Appointment erscheint als Option im Hauptmenü und kann genutzt werden.
+	
+	
+4. disk, delete und repeat als Parameter:
+	- Zusätzlich erscheint die Option "Repeat Appointment" im Main Menu und kann genutzt werden.
+	
