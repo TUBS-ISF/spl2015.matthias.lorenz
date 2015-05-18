@@ -3,34 +3,30 @@
 		<struct>
 			<alt abstract="true" mandatory="true" name="MatthiasLorenzTask1">
 				<description>
-					 
+					
 				</description>
-				<and abstract="true" mandatory="true" name="Terminsoftware">
+				<and abstract="true" mandatory="true" name="terminsoftware">
 					<description>
 						generische Software zur Terminverwaltung
 					</description>
-					<and abstract="true" mandatory="true" name="lokale Datenhaltung">
+					<and abstract="true" mandatory="true" name="lokale_datenhaltung">
 						<description>
 							sätmliche Datenhaltung die lokal vorgenommen wird
-							
 						</description>
 						<feature mandatory="true" name="eintragen">
 							<description>
 								minimal-feature. erstellen des Termins
-								
 							</description>
 						</feature>
 						<feature mandatory="true" name="auslesen">
 							<description>
 								auslesen des termins
-								
 							</description>
 						</feature>
 						<feature name="wiederholen">
 							<description>
 								möglichkeit termin nach einem bestimmten muster zu wiederholen
 								(wöchentlich, einmalig, jährlich)
-								
 							</description>
 						</feature>
 						<feature name="kopieren">
@@ -41,150 +37,138 @@
 						<feature name="löschen">
 							<description>
 								termin entfernen
-								
 							</description>
 						</feature>
-						<or abstract="true" name="backup / restore">
+						<or abstract="true" name="backup_restore">
 							<description>
 								einfache backup und restore möglichkeiten
 							</description>
-							<feature mandatory="true" name="lokales backup">
+							<feature mandatory="true" name="lokales_backup">
 								<description>
 									lokale kopie des files um diese manuell auf USB-Stick, oder entfernten PC zu sichern
-									
 								</description>
 							</feature>
-							<feature mandatory="true" name="cloud backup">
+							<feature mandatory="true" name="cloud_backup">
 								<description>
 									backup in der (Daten)cloud
 								</description>
 							</feature>
 						</or>
-						<or abstract="true" name="import / export">
+						<or abstract="true" name="import_export">
 							<description>
 								import export eines Termins in verschiedene formate
-								
 							</description>
 							<feature mandatory="true" name="csv"/>
 							<feature mandatory="true" name="txt"/>
-							<feature mandatory="true" name="iCal"/>
-							<feature mandatory="true" name="Google"/>
+							<feature mandatory="true" name="ical"/>
+							<feature mandatory="true" name="google"/>
 						</or>
 					</and>
-					<and abstract="true" name="entfernte Datenhaltung">
+					<and abstract="true" name="entfernte_datenhaltung">
 						<description>
 							verteilte komponenten, die vor allem im multi-user bereich sinn macht oder wenn ein user verschiendene geräte nutzt
 						</description>
-						<feature name="entferntes abrufen von Terminen">
+						<feature name="entfernter_terminabruf">
 							<description>
 								abrufen von terminen die zentral gespeichert sind
-								
 							</description>
 						</feature>
-						<feature name="entfernte Übermittlung von Terminen">
+						<feature name="entfernte_terminübermittlung">
 							<description>
 								übermitteln der termine an eine zentrale speicherstelle
 							</description>
 						</feature>
 					</and>
-					<or abstract="true" mandatory="true" name="Interface">
+					<or abstract="true" mandatory="true" name="interface">
 						<description>
 							interface für die interaktion mit dem programm
-							
 						</description>
-						<or mandatory="true" name="GUI">
+						<or mandatory="true" name="gui">
 							<description>
 								verschiedene grafische interfaces
-								
 							</description>
-							<feature mandatory="true" name="Dekstop">
+							<feature mandatory="true" name="dekstop">
 								<description>
 									auf Desktop optimiert
-									
 								</description>
 							</feature>
-							<feature mandatory="true" name="Phone">
+							<feature mandatory="true" name="phone">
 								<description>
 									für Smartphone optimiert
-									
 								</description>
 							</feature>
-							<feature mandatory="true" name="Pad">
+							<feature mandatory="true" name="pad">
 								<description>
 									für Pads optimiert
 								</description>
 							</feature>
 						</or>
-						<feature mandatory="true" name="Terminal">
+						<feature mandatory="true" name="terminal">
 							<description>
 								einfache Terminal-Interaktion
-								
 							</description>
 						</feature>
-						<feature mandatory="true" name="Log">
+						<feature mandatory="true" name="log">
 							<description>
 								Logging
 							</description>
 						</feature>
 					</or>
-					<and abstract="true" name="Multi-User">
+					<and abstract="true" name="multi_user">
 						<description>
 							Features zur Kooperation mehrer User
 						</description>
-						<feature name="Termin teilen">
+						<feature name="termin_teilen">
 							<description>
 								Termin an andere Nutzer übermitteln
 							</description>
 						</feature>
-						<and name="Termingruppen">
+						<and name="termingruppen">
 							<description>
 								Möglichkeit Termine Gruppen zuzuordnen
-								
 							</description>
-							<feature name="Termin zuweisen">
+							<feature name="termin_zuweisen">
 								<description>
 									Zuweisung an andere Nutzer der Gruppe
 								</description>
 							</feature>
-							<feature name="Sichtbarkeit in Gruppe">
+							<feature name="gruppensichtbarkeiten">
 								<description>
 									Sichtbarkeit der Termine in der Gruppe
 								</description>
 							</feature>
 						</and>
 					</and>
-					<and abstract="true" name="Sicherheit">
+					<and abstract="true" name="sicherheit">
 						<description>
 							Sicherheitsrelevante Features
 						</description>
-						<feature name="Authentifizierung">
+						<feature name="authentifizierung">
 							<description>
 								An und Abmelden von Benutzern
-								
 							</description>
 						</feature>
-						<feature name="Verschlüsselung">
+						<feature name="verschlüsselung">
 							<description>
 								Verschlüsseln der gespeicherten Daten
 							</description>
 						</feature>
 					</and>
-					<and abstract="true" name="Notifications">
+					<and abstract="true" name="notifications">
 						<description>
 							Mitteilungen für einen anstehenden Termin
-							
 						</description>
-						<feature name="im Interface">
+						<feature name="interface_notifications">
 							<description>
 								Mitteilung wenn Software läuft
 							</description>
 						</feature>
-						<feature name="sms">
+						<feature name="sms_notifications">
 							<description>
 								Kurznachricht an ein Telefon
 							</description>
 						</feature>
-						<feature name="mail">
+						<feature name="mail_notifications">
 							<description>
 								email nachricht
 							</description>

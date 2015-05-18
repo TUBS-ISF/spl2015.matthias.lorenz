@@ -1,24 +1,62 @@
-# Lists all features from the model with manual (first digit) and automatic (second digit) selection
-# 0 = deselected, 1 = selected, 2 = undefined
+#
+Lists
+all
+features
+from
+the
+model
+with
+manual
+(first
+digit)
+and
+automatic
+(second
+digit)
+selection
+#
+0
+=
+deselected,
+1
+=
+selected,
+2
+=
+undefined
 21MatthiasLorenzTask1
 21Terminsoftware
-21lokale Datenhaltung
+21lokale
+Datenhaltung
 21eintragen
 21auslesen
 22wiederholen
 22kopieren
 22löschen
-22backup / restore
-22lokales backup
-22cloud backup
-22import / export
+22backup
+/
+restore
+22lokales
+backup
+22cloud
+backup
+22import
+/
+export
 22csv
 22txt
 22iCal
 22Google
-22entfernte Datenhaltung
-22entferntes abrufen von Terminen
-22entfernte Übermittlung von Terminen
+22entfernte
+Datenhaltung
+22entferntes
+abrufen
+von
+Terminen
+22entfernte
+Übermittlung
+von
+Terminen
 21Interface
 22GUI
 22Dekstop
@@ -27,14 +65,19 @@
 12Terminal
 22Log
 22Multi-User
-22Termin teilen
+22Termin
+teilen
 22Termingruppen
-22Termin zuweisen
-22Sichtbarkeit in Gruppe
+22Termin
+zuweisen
+22Sichtbarkeit
+in
+Gruppe
 22Sicherheit
 22Authentifizierung
 22Verschlüsselung
 22Notifications
-22im Interface
+22im
+interface
 22sms
 22mail
