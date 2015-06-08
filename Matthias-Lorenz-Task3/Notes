@@ -1,4 +1,111 @@
 Feature-Diagramm siehe:
 https://github.com/TUBS-ISF/spl2015.matthias.lorenz/tree/master/Matthias-Lorenz-Task1
 
-Testkonfigurationen:
+
+
+*************************
+* Testkonfigurationen:  *
+*************************
+
+Anwählbare Präprozessor-Defines:
+
+TUI, GUI, DISK, DELETE ,REPEAT, COPY (ohne Implementierung)
+
+
+Nur Minimal_GUI und Minimal testbar, da sonst Features fehlen.
+
+
+
+1 - Minimal:
+------------
+TUI,DISK
+
+Terminalauswahl möglich von:
+
+New Appointment	 
+Display Appointments	 
+Quit
+
+Rest der Funktionalität im Code auskommentiert durch Antenna.
+Nicht auskommentiert sind imports und Klassendefinitionen.
+Dies wäre mit Antenna auch einfach möglich, da der Compiler
+nicht genutzte imports nicht berücksichtigen sollte, habe ich aus Gründen
+der Übersicht darauf verzichtet.
+		 
+
+2 - Minimal_GUI:
+----------------
+GUI, DISK
+
+2 Buttons wählbar:
+
+New Appointment
+Display Appointments
+
+mit dahinterliegender Funktionalität.
+
+
+------------------------------
+3 zusätzliche Konfihurationen:
+------------------------------
+
+
+3 - Terminal_Implemented_Max
+----------------------------
+TUI,DISK,DELETE,REPEAT,COPY
+
+Terminalauswahl möglich von:
+
+New Appointment
+Display Appointments
+Repeat Appointment
+Copy Appointment
+Delete Appointment
+Quit
+
+Wobei Copy Appointment einen Hinweis auf noch fehlende Unterstützung gibt.
+
+
+4 - GUI_Implemented_Max
+-----------------------
+GUI,DISK,DELETE,REPEAT,COPY
+
+5 Buttons wählbar:
+
+New Appointment
+Display Appointments
+Repeat Appointment
+Copy Appointment
+Delete Appointment
+
+Copy ohne Funktion.
+
+
+5 - GUI+TUI_Implemented_Max
+---------------------------
+GUI,TUI,DISK,DELETE,REPEAT,COPY
+
+Da:
+
+//#ifdef GUI
+	start_gui()
+//#elifdef TUI
+	start_tui()
+//#endif
+
+wird der Code für das Terminal auskommentiert und nicht genutzt.
+So ist sichergestellt dass nur eins der beiden Features gleichzeitig wählbar ist.
+GUI "gewinnt" hier, Ausführung wie bei 4.
+
+---------------------------------
+---------------------------------
+
+
+Sonstiges:
+
+Es wäre möglich die Präprozessordirektiven noch restriktiver einzusetzen und so zum Beispiel
+in der Datenhaltungsschicht Lösch-Funktionalität bei nicht gewählten DELETE auszukommentieren.
+Dadurch würden die if-defs sich aber auch durch das eigentlich absichtlich generisch und schlank gehaltene Speicherinterface ziehen. 
+
+
+
