@@ -1,0 +1,148 @@
+*************************
+* Allgemeines:   		*
+*************************
+
+Aufgrund meiner zugrundeliegenden Architektur ist
+mir die Umsetzung der Modularitaet als Framework zum Teil
+recht schwer gefallen.
+Prinzipiell war aber auch schon in den vorhergehenden Implementierungen
+aus den letzten beiden Aufgaben die Modularitaet dort ueber Plugins
+geloest wo es sinnvoll war.
+Dies geschah und geschieht ueber:
+
+- StorageDataHandlerIF im MainDatahandler
+- UserInteraceIF in der Hauptklasse Terminator
+
+Neu ist die Authentifizierung als Plugin ueber:
+
+- AuthenticatorIF im Coordinator
+
+
+Probleme gab es mit den sehr feingranularen Features
+wie:
+
+- Delete
+- Repeat
+- Read
+- Create
+
+Problematisch war das Interface so zu gestalten dass Funktionalitaet
+im Terminal sowie in der GUI erhalten ist. 
+Die Eingaben und Ausgaben erfolgen nicht ausreichend generisch um
+jeweils eine Klasse fuer GUI und Terminal zu nutzen.
+Auch ist die Methodensignatur zu allgemein mit allen moeglichen Kombinationen
+von Ein und Ausgaben die benoetigt werden.
+Schlussendlich habe ich eine 3-Schichten Architektur gewaehlt in der Datenhaltung, Interface
+und Geschaeftslogik getrennt sind. Die Plugins muessten diese Architektur entweder verletzen
+oder die Schichten immer saemtlichen Code fuer alle moeglichen Plugins bereithalten,
+was aber ja auch nicht der Sinn von Produktlinien ist.
+Aus diesem Grund habe ich zwar im Package Operations mit der Plugin-isierung angefangen,
+habe mich aber dagegen entschieden dies fortzufuehren.
+
+Ich bin zu dem Schluss gekommen, dass Modularitaet ueber Plugins
+sich an entsprechend Stellen wie hier Datenhaltung, UI und
+Authentifizierung anbietet und sinnvoll ist, an anderen Stellen aber 
+der Wiederverwertbarkeit, dem Architektur- und Codestil aber eher abtraeglich ist.
+
+
+*************************
+* Neue Funktionen:		*
+*************************
+
+- Authentifizierung
+  	Ueber den Coordinator kann eine Authentifizierung gestartet werden.
+  	Moeglich sind aktuell eine Dummy-Authentifizierung, die alle 
+  	Usernamen und tokens durchwingt und eine mit hardgecodeten
+  	Passwoertern und Usernamen. Denkbar waeren noch 
+  	Authentifizierung ueber Credentials in einer Datei oder Datenbank.
+  	Aktuell muessen alle gewaehlten Authentikatoren die Credentials bestaetigen,
+  	eventuell waere es auch sinnvoll dies so zu aendern das nur ein Plugin bestaetigen muss.
+  	
+- SQL-DataHandler
+	Es ist auch moeglich die Daten in einer (simplen) SQL-Tabelle 
+	zu verwalten.
+	Die Datenbank laeuft auf meinem SQL-Server, die Zugangsdaten werden ich
+	seperat per Mail versenden, damit sie nicht im oeffentlichen SVN liegen.
+	
+
+*************************
+* Testkonfigurationen:  *
+*************************
+
+Anwählbare Stellen sind im Code mit einem
+//CHOOSE
+kommentar versehen.
+
+
+Moegliche Features:
+
+- UI
+	- Terminal
+	- GUI
+
+- Storage
+	- SQL
+	- Disk
+	
+- Authentifizierung
+	- Dummy
+	- Hardgecoded
+	
+- Kalenderoperationen (Nicht als Framework)
+	- Create
+	- Read
+	- Repeat
+	- Delete
+
+
+1 - Minimal SQL:
+------------
+Terminal, SQL
+
+Terminalauswahl möglich von:
+
+New Appointment	 
+Display Appointments	 
+Quit
+
+Daten werden transparent in DB verwaltet.
+		 
+
+2 - Minimal GUI SQL:
+----------------
+GUI, SQL
+
+2 Buttons wählbar:
+
+New Appointment
+Display Appointments
+
+Daten werden transparent in DB verwaltet.
+
+
+3 - Terminal Auth Disk
+----------------------------
+Terminal, Disk, Auth-Hardgecoded
+
+Abfrage der Credentials. 
+3 Fehlversuche fueren zum Programmenden,
+ansosten wird nach korrekten Credentials
+(zB "root" + "geheim") das gewohnte Menue
+gezeigt.
+
+
+4 - GUI Implemented Max Auth-Dummy SQL
+-----------------------
+GUI,SQL,Auth-Hardgecoded,Create,Read,Repeat,Delete
+
+Anmeldefenster was beliebige Credentials bestaetigt,
+danach alle Funktionen im Hauptfenster.
+
+
+5 - TUI Disk Auth-Dummy Auth-Hard
+---------------------------
+Terminal, Disk, Auth-Dummy, Auth-Hard
+
+Diesmal reichen trotz Dummy-Authentifizierung 
+keine beliebigen Credentials, da ausserdem auch auf
+die Hardgecodeten Credentials geprueft wird.
