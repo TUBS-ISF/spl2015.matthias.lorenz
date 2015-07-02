@@ -15,7 +15,7 @@ public class MainDataHandler
 		this.storageDHandler = new LinkedList<StorageDataHandlerIF>();
 		
 		//#ifdef DISK
-			storageDHandler.add(new DiskDataHandler());
+//@			storageDHandler.add(new DiskDataHandler());
 		//#endif
 	}
 	

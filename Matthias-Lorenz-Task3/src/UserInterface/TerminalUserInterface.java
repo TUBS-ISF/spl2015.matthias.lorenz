@@ -44,23 +44,23 @@ public class TerminalUserInterface implements UserInterfaceIF {
 				return;
 			}
 			//#ifdef REPEAT
-			else if(input.equalsIgnoreCase("r"))
-			{
-				repeatAppointment();
-			}
+//@			else if(input.equalsIgnoreCase("r"))
+//@			{
+//@				repeatAppointment();
+//@			}
 			//#endif
 			//#ifdef COPY
-			else if(input.equalsIgnoreCase("c"))
-			{
-				System.out.println("Not supported yet. :*(");
-				
-			}
+//@			else if(input.equalsIgnoreCase("c"))
+//@			{
+//@				System.out.println("Not supported yet. :*(");
+//@				
+//@			}
 			//#endif
 			//#ifdef DELETE
-			else if(input.equalsIgnoreCase("del"))
-			{
-				deleteAppointment();
-			}	
+//@			else if(input.equalsIgnoreCase("del"))
+//@			{
+//@				deleteAppointment();
+//@			}	
 			//#endif
 			else
 			{
@@ -84,15 +84,15 @@ public class TerminalUserInterface implements UserInterfaceIF {
 		System.out.println("Display Appointments:\t [d]");	
 		
 		//#ifdef REPEAT
-			System.out.println("Repeat Appointment:\t [r]");
+//@			System.out.println("Repeat Appointment:\t [r]");
 		//#endif
 		
 		//#ifdef COPY
-			System.out.println("Copy Appointment:\t [c]");
+//@			System.out.println("Copy Appointment:\t [c]");
 		//#endif
 			
 		//#ifdef DELETE
-			System.out.println("Delete Appointment:\t [del]");
+//@			System.out.println("Delete Appointment:\t [del]");
 		//#endif	
 		
 		System.out.println("Quit:\t\t\t [q]");

@@ -89,50 +89,50 @@ public class MainWindow extends JFrame {
 		
 		
 		//#ifdef REPEAT
-		final JButton rptApp = new JButton("Repeat Appointment");
-		rptApp.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				if(e.getSource() == rptApp)
-				{
-					RepeatAppointmentWindow frame = new RepeatAppointmentWindow(c);
-					frame.setVisible(true);
-				}
-			}
-		});
-		contentPane.add(rptApp);
+//@		final JButton rptApp = new JButton("Repeat Appointment");
+//@		rptApp.addActionListener(new ActionListener() 
+//@		{
+//@			public void actionPerformed(ActionEvent e) 
+//@			{
+//@				if(e.getSource() == rptApp)
+//@				{
+//@					RepeatAppointmentWindow frame = new RepeatAppointmentWindow(c);
+//@					frame.setVisible(true);
+//@				}
+//@			}
+//@		});
+//@		contentPane.add(rptApp);
 		//#endif
 		
 		//#ifdef COPY
-		final JButton cpyApp = new JButton("Copy Appointment");
-		cpyApp.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				if(e.getSource() == cpyApp)
-				{
-					System.out.println("Button was clicked! yay!");
-				}
-			}
-		});
-		contentPane.add(cpyApp);
+//@		final JButton cpyApp = new JButton("Copy Appointment");
+//@		cpyApp.addActionListener(new ActionListener() 
+//@		{
+//@			public void actionPerformed(ActionEvent e) 
+//@			{
+//@				if(e.getSource() == cpyApp)
+//@				{
+//@					System.out.println("Button was clicked! yay!");
+//@				}
+//@			}
+//@		});
+//@		contentPane.add(cpyApp);
 		//#endif
 		
 		//#ifdef DELETE
-		final JButton dltApp = new JButton("Delete Appointment");
-		dltApp.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				if(e.getSource() == dltApp)
-				{
-					DeleteAppointmentWindow frame = new DeleteAppointmentWindow(c);
-					frame.setVisible(true);
-				}
-			}
-		});
-		contentPane.add(dltApp);
+//@		final JButton dltApp = new JButton("Delete Appointment");
+//@		dltApp.addActionListener(new ActionListener() 
+//@		{
+//@			public void actionPerformed(ActionEvent e) 
+//@			{
+//@				if(e.getSource() == dltApp)
+//@				{
+//@					DeleteAppointmentWindow frame = new DeleteAppointmentWindow(c);
+//@					frame.setVisible(true);
+//@				}
+//@			}
+//@		});
+//@		contentPane.add(dltApp);
 		//#endif	
 	}
 }
