@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<alt abstract="true" mandatory="true" name="MatthiasLorenzTask5">
+				<description>
+					
+				</description>
+				<and mandatory="true" name="terminsoftware">
+					<description>
+						generische Software zur Terminverwaltung
+					</description>
+					<or abstract="true" mandatory="true" name="interface">
+						<description>
+							interface für die interaktion mit dem programm
+						</description>
+						<alt abstract="true" mandatory="true" name="gui">
+							<description>
+								verschiedene grafische interfaces
+							</description>
+							<feature mandatory="true" name="dekstop">
+								<description>
+									auf Desktop optimiert
+								</description>
+							</feature>
+						</alt>
+						<feature mandatory="true" name="terminal">
+							<description>
+								einfache Terminal-Interaktion
+							</description>
+						</feature>
+					</or>
+					<and abstract="true" mandatory="true" name="operationen">
+						<feature mandatory="true" name="eintragen">
+							<description>
+								minimal-feature. erstellen des Termins
+							</description>
+						</feature>
+						<feature mandatory="true" name="auslesen">
+							<description>
+								auslesen des termins
+							</description>
+						</feature>
+						<feature name="loeschen">
+							<description>
+								termin entfernen
+							</description>
+						</feature>
+						<feature name="wiederholen">
+							<description>
+								möglichkeit termin nach einem bestimmten muster zu wiederholen
+								(wöchentlich, einmalig, jährlich)
+							</description>
+						</feature>
+					</and>
+					<and abstract="true" mandatory="true" name="datenhaltung">
+						<feature name="lokale_datenhaltung">
+							<description>
+								sätmliche Datenhaltung die lokal vorgenommen wird
+							</description>
+						</feature>
+						<feature name="entfernte_datenhaltung">
+							<description>
+								verteilte komponenten, die vor allem im multi-user bereich sinn macht oder wenn ein user verschiendene geräte nutzt
+							</description>
+						</feature>
+					</and>
+					<and abstract="true" name="sicherheit">
+						<description>
+							Sicherheitsrelevante Features
+						</description>
+						<alt name="authentifizierung">
+							<description>
+								An und Abmelden von Benutzern
+							</description>
+							<feature mandatory="true" name="hardcoded"/>
+							<feature mandatory="true" name="dummy"/>
+						</alt>
+					</and>
+				</and>
+			</alt>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

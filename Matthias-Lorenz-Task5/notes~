@@ -1,0 +1,62 @@
+*************************
+* Allgemeines:   	*
+*************************
+
+Sehr schoene Trennung des Codes der Features.
+Bei vielen Features wird es aber schnell unuebersichtlich,
+weswegen ich das Modell auf die nur implementierten Features reduziert habe
+um die Ordnerstruktur kleiner zu halten.
+
+Leider werden bei bestimmten Konfigurationen Fehler im Code im features-Ordner
+angezeigt, da einige Abhaengigkeiten nicht da sind.
+Mehr dazu bei den Tests.
+
+
+*************************
+* Neue Funktionen:	*
+*************************
+
+Diesmal keine, da so schon 8 Features vorhanden sind.
+Bezueglich der Zugangsdaten fuer den SQL-Server siehe letzte Aufgabe.
+
+
+*************************
+* Testkonfigurationen:  *
+*************************
+
+Alle im config-Ordner.
+
+
+1 - Minimal SQL:
+------------
+
+Keine Probleme, nur gewuenschter Code generiert.
+
+
+
+2 - Minimal GUI SQL:
+----------------
+
+Keine Probleme, nur gewuenschter Code generiert.
+
+
+3 - Terminal Auth Disk
+----------------------------
+
+Leider der Authentifizierungsteil fuer das GUI mit generiert.
+Da jedes Feature fuer GUI und Terminal bereitsteht nicht einfach vermeidbar.
+Moeglich waere eine weitere Unterteilung der Features wie etwa:
+authentifzierungGUI und authentifizierungTerminal.
+
+
+4 - GUI Implemented Max Auth-Dummy SQL
+-----------------------
+
+Siehe 3. Zusaetzlich wurde jetzt auch noch uerberfluessiger Code 
+fuer die Terminaloperationen Repeat und Delete generiert.
+
+
+5 - TUI Disk Auth-Dummy Auth-Hard
+---------------------------
+
+
