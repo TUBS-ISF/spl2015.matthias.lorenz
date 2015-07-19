@@ -1,0 +1,20 @@
+# Lists all features from the model with manual (first digit) and automatic (second digit) selection
+# 0 = deselected, 1 = selected, 2 = undefined
+21MatthiasLorenzTask6
+21terminsoftware
+21interface
+20gui
+20desktop
+12terminal
+21operationen
+12eintragen
+12auslesen
+22loeschen
+22wiederholen
+21datenhaltung
+12lokaleDatenhaltung
+22entfernteDatenhaltung
+21sicherheit
+11authentifizierung
+12hardcoded
+22dummy

@@ -1,0 +1,97 @@
+*************************
+* Allgemeines:   		*
+*************************
+
+Prinzipiell nichts anderes als
+Feature-orientierte Programmierung mit mehr
+Kontrolle und Moeglichkeiten.
+Grosser Nachteil das kein finaler Quelltext sichtbar,
+macht Debugging etwas muehseeliger trotz Toolsupport.
+
+Um aus dem Aspekt auf Variablen oder Methoden zugreifen
+zu koennen muessen extra getter und setter genutzt werden,
+oder Sichtbarkeiten geaendert werden.
+Habe mich fuer geanderte Sichtbarkeiten entschieden,
+ist aber auch keine schoene Loesung.
+
+Auch hier ist wie bei der letzten Aufgabe der Code fuer 
+die Operationen auslesen, eintragen, loeschen, wiederholen
+in den Aspekten je fuer GUI und Terminal UI vorhanden.
+Der jeweils nicht genutzte Code wird vom Compiler aber (hoffentlich)
+erkannt, und wird so nicht zu den Binaries hinzugefuegt. 
+
+Um nicht Aspekte auf Innere Klassen anwenden zu muessen habe ich GraphicalUserInterface,
+TerminalUserInterface und MainWindow in .java Dateien gelassen.
+Besser waere es aber wohl doch diese nur in den Aspekten zu definieren.
+
+Die Aspekte sind nicht im defaultPackage, sondern bei den Zugehoerigen Klassen/Interfaces.
+
+
+*************************
+* Neue Funktionen:		*
+*************************
+
+Aus Gruenden der Zeit und Einfachheit habe ich die Features "auslesen"
+und "eintragen" optional gemacht.
+Bezueglich der Zugangsdaten fuer den SQL-Server siehe Aufgabe 4.
+
+
+*************************
+* Testkonfigurationen:  *
+*************************
+
+Alle im config-Ordner.
+Automatisches kompillieren der in der Config gewaehlten Aspekte funktioniert
+in meinem Projekt leider nicht.
+Eventuell liegt es an der Eclipse oder AJDT Version,
+oder daran dass ich AJDT nach AspectJ fuer Feature IDE installiert habe.
+Eventuell liegt es auch daran, dass ich die Position der Aspekte veraendert habe.
+
+Zum Testen kommentiere ich ungewuenschte Features aus.
+
+
+1 - Minimal SQL:
+------------
+
+Keine Probleme.
+UserInterface wird einfach vor Aufruf der init()-Methode
+per Aspekt festgesetzt. Die Methode selbst ist leer und dient
+nur als genauer Sprungpunkt.
+
+Implementierung des SQL-Handlers als innere Klasse die das StorageDataHandlerIF
+implementiert und auch so einfach aehnlich wie das UserInterface gesetzt werden kann.
+
+Die Operationen auslesen und eintragen werden durch die Aspekte entweder ins Terminal-Menue
+oder in das Hauptfenster eingetragen.
+
+
+2 - Minimal GUI SQL:
+----------------
+
+Keine Probleme.
+
+
+3 - Terminal Auth Hard Disk
+----------------------------
+
+Der generelle Code fuer die Authentifizierung wird im entsprechenden
+Aspekt bearbeitet.
+Sobald eine von UserInterfaceIF startUserInterface() ausfuehrt wird
+ueberprueft ob diese Klasse ein TerminalUserInterface oder ein GraphicelUserinterface war,
+danach wird der dementsprechende Dialog gestartet.
+
+Die eigentlichen Authentifizierungsfunktionalitaet wird durch den Coordinator bereitgestellt,
+bzw ueber die entsprechenden Aspekte dort injiziert.
+
+
+
+4 - GUI Implemented Max Auth-Dummy SQL
+-----------------------
+
+Keine Probleme.
+
+
+5 - TUI Implemented Max Disk Auth-Hard
+---------------------------
+
+Keine Probleme.
